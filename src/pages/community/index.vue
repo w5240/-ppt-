@@ -1,23 +1,45 @@
 <template>
   <layout class="index">
     <ul class="flex-box">
-      <li><router-link class="box box-1" :to="{name:'commList', query: {id:11}}"><img class="box-icon" src="./img/1.png" alt="" srcset=""><i>基础情况</i></router-link></li>
-      <li><router-link class="box box-2" :to="{name:'commList' , query: {id:12}}"><img class="box-icon" src="./img/5.png" alt="" srcset=""><i>创新示范项目</i></router-link></li>
-      <li><router-link class="box box-3" :to="{name:'commList' , query: {id:13}}"><img class="box-icon" src="./img/3.png" alt="" srcset=""><i>特色简介</i></router-link></li>
-      <li><router-link class="box box-4" :to="{name:'commList' , query: {id:15}}"><img class="box-icon" src="./img/6.png" alt="" srcset=""><i>党建时讯</i></router-link></li>
-      <li><router-link class="box box-5" :to="{name:'commList' , query: {id:15}}"><img class="box-icon" src="./img/7.png" alt="" srcset=""><i>先锋团队</i></router-link></li>
-      <li><router-link class="box box-6" :to="{name:'commList' , query: {id:14}}"><img class="box-icon" src="./img/4.png" alt="" srcset=""><i>党组织班子</i></router-link></li>
-      <li><router-link class="box box-7" :to="{name:'commList' , query: {id:14}}"><img class="box-icon" src="./img/8.png" alt="" srcset=""><i>网格化管理</i></router-link></li>
+      <li><router-link class="box box-1" :to="{name:'article', params: {id:'jcqk'}}"><img class="box-icon" src="./img/1.png" alt="" srcset=""><i>基础情况</i></router-link></li>
+      <li><router-link class="box box-2" :to="{name:'article' , params: {id:4}}"><img class="box-icon" src="./img/5.png" alt="" srcset=""><i>创新示范项目</i></router-link></li>
+      <li><router-link class="box box-3" :to="{name:'article' , params: {id:4}}"><img class="box-icon" src="./img/3.png" alt="" srcset=""><i>特色简介</i></router-link></li>
+      <li><router-link class="box box-4" :to="{name:'commList' , params: {id:7}}"><img class="box-icon" src="./img/6.png" alt="" srcset=""><i>党建时讯</i></router-link></li>
+      <li><router-link class="box box-5" :to="{name:'article' , params: {id:4}}"><img class="box-icon" src="./img/7.png" alt="" srcset=""><i>先锋团队</i></router-link></li>
+      <li><router-link class="box box-6" :to="{name:'article' , params: {id:4}}"><img class="box-icon" src="./img/4.png" alt="" srcset=""><i>党组织班子</i></router-link></li>
+      <li><router-link class="box box-7" :to="{name:'article' , params: {id:4}}"><img class="box-icon" src="./img/8.png" alt="" srcset=""><i>网格化管理</i></router-link></li>
     </ul>
     <div class="bg"></div>
   </layout>
 </template>
 <script>
   import layout from '@/components/layouts/with-time.vue';
+  import axios from 'axios';
+
   export default {
+      data(){
+          return{
+            art:[],
+          }
+      },
+    mounted(){
+        this.gethtml();
+        console.log(11)
+    },
+    methods:{
+      gethtml(){
+        axios
+//          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=${this.$route.params.id}`)
+          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=7`)
+          .then(res => {
+            console.log(res.data.data)
+            this.art = res.data.data[0];
+          });
+      }
+    },
     components: {
       layout
-    }
+    },
   };
 </script>
 

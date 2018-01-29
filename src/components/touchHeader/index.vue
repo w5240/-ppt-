@@ -61,7 +61,7 @@ export default {
     display: block;
     width: 26px;
     margin: 0 auto;
-    margin-top: v(50px);
+    margin-top: v(40px);
   }
   min-width: v(90px);
 }

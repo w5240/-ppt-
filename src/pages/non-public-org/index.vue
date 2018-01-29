@@ -6,7 +6,7 @@
       <span :class="index===whichSel?'sel':''" v-for="(c,index) in char" :key="c" @click = 'choose(c,index)'>{{c}}</span>
     </div>
     <ul class="list">
-      <li v-for="e in list">{{e.title}}</li>
+      <li v-for="e in list" @click="$router.push({name:'community'})">{{e.title}}</li>
     </ul>
       <div class="box box-3-1">
         <h2>社区党组织</h2>
@@ -58,10 +58,11 @@ export default {
   methods:{
       getList(){
         axios
-          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=16`)
+          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=${this.$route.params.id}`)
+//          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=16`)
           .then(res => {
-//              console.log(res.data.data);
 //            prefix
+            console.log(res.data.data)
             this.list = res.data.data.reverse();
             this.listStore = JSON.parse(JSON.stringify(res.data.data.reverse()));
           });
@@ -161,6 +162,7 @@ export default {
     box-sizing: border-box;
     line-height: v(50px);
     color: #474747;
+    cursor:pointer;
     &:hover{
       background-color: #ff9900;
       color:white;

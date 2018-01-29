@@ -87,19 +87,19 @@
             {
               name: "党的十九大",
               icon: require("./icon/2-1.png"),
-              to: "/articleCenter/4",
+              to: "/option/4",
               color: "#00979d"
             },
             {
               name: "三会一课",
               icon: require("./icon/2-2.png"),
-              to: "/article/5",
+              to: "/option/5",
               color: "#bd7800"
             },
             {
               name: "两学一做",
               icon: require("./icon/2-3.png"),
-              to: "/article/6",
+              to: "/option/6",
               color: "#de007f"
             }
           ],
@@ -107,25 +107,25 @@
             {
               name: "社区党组织",
               icon: require("./icon/3-1.png"),
-              to: "/community",
+              to: "/non-public-org/7",
               color: "#c00000"
             },
             {
               name: "机关党组织",
               icon: require("./icon/3-2.png"),
-              to: "/article/8",
+              to: "/non-public-org/8",
               color: "#de4400"
             },
             {
               name: "非公及社会组织",
               icon: require("./icon/3-3.png"),
-              to: "/non-public-org",
+              to: "/non-public-org/9",
               color: "#009d12"
             },
             {
               name: "楼宇工作站",
               icon: require("./icon/3-4.png"),
-              to: "/article/10",
+              to: "/non-public-org/10",
               color: "#081cdf"
             }
           ]

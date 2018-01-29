@@ -11,6 +11,7 @@ import articleCenter from '../pages/articleCenter/index'
 import community from '../pages/community/index'
 import commList from '../pages/comm-list/index'
 import commSin from '../pages/comm-sin/index'
+import option from '../pages/option/index'
 
 
 Vue.use(Router);
@@ -33,7 +34,7 @@ export default new Router({
     name: 'innovative-projects',
     component: innovativeProjects
   }, {
-    path: '/non-public-org',
+    path: '/non-public-org/:id',
     name: 'non-public-org',
     component: nonPublicOrg
   }, {
@@ -49,12 +50,16 @@ export default new Router({
     name: 'community',
     component: community
   },{
-    path: '/commList',
+    path: '/commList/:id',
     name: 'commList',
     component: commList
   },{
-    path: '/commSin',
+    path: '/commSin/:id',
     name: 'commSin',
     component: commSin
+  },{
+    path: '/option/:id',
+    name: 'option',
+    component: option
   },]
 })

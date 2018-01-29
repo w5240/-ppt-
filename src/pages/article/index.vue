@@ -29,6 +29,7 @@ export default {
         axios
           .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=${this.$route.params.id}`)
           .then(res => {
+              console.log(res);
             this.art = res.data.data;
           });
       }
@@ -47,6 +48,9 @@ export default {
     margin: 0 0 39px 0;
   }
   .art {
+    font-size: v(18px);
+    height:v(480px);
+    overflow: auto;
     p {
       font-size: v(18px);
       line-height: v(36px);

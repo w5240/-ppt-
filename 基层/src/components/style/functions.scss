@@ -1,4 +1,0 @@
-// 把像素值转换为视口宽度
-@function v($px) {
-  @return $px / 7.68px * 1vmin;
-}

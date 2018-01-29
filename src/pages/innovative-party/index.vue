@@ -2,7 +2,7 @@
 <div class="innovative-party">
   <layout>
     <div class="content-box">
-      <h1>创新型党组织</h1>
+      <h1>{{title}}</h1>
       <ul>
         <li v-for="e in list">{{e.title}}</li>
       </ul>
@@ -21,20 +21,22 @@ export default {
   data(){
       return {
         list:[],
+        title:'',
       }
   },
   mounted(){
     this.getlist();
+    this.title = this.$route.query.title;
 
   },
   methods:{
     getlist(){
       axios
-//        .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=${this.$route.query.id}`)
-        .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=17}`)
+        .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=${this.$route.query.id}`)
+//        .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=17}`)
         .then(res => {
+//            console.log(res.data)
           this.list = res.data.data;
-
         })
     },
   },
@@ -68,8 +70,8 @@ export default {
   border-radius:4px;
 }
 .innovative-party {
-  background-image: url("../../assets/images/bg-white.jpg");
-  background-size: contain;
+  background-image: url("./img/1.jpg");
+  background-size: 100% 100%;
 }
 .content-box {
   h1 {

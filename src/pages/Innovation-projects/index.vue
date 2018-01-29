@@ -1,11 +1,11 @@
 <template>
 <layout class="index">
     <ul class="flex-box">
-        <li><router-link class="box box-1" :to="{name:'innovative-party', query: {id:11}}"><img class="box-icon" src="./icon/atom.png" alt="" srcset=""><i>创建新型党组织</i></router-link></li>
-        <li><router-link class="box box-2" :to="{name:'innovative-party' , query: {id:12}}"><img class="box-icon" src="./icon/server.png" alt="" srcset=""><i>服务型党组织</i></router-link></li>
-        <li><router-link class="box box-3" :to="{name:'innovative-party' , query: {id:13}}"><img class="box-icon" src="./icon/pintu.png" alt="" srcset=""><i>引领性党组织</i></router-link></li>
-        <li><router-link class="box box-4" :to="{name:'innovative-party' , query: {id:15}}"><img class="box-icon" src="./icon/smart.png" alt="" srcset=""><i>普惠型党组织</i></router-link></li>
-        <li><router-link class="box box-5" :to="{name:'innovative-party' , query: {id:14}}"><img class="box-icon" src="./icon/book.png" alt="" srcset=""><i>学习型党组织</i></router-link></li>
+        <li><router-link class="box box-1" :to="{name:'innovative-party', query: {id:11,title:'创建新型党组织'}}"><img class="box-icon" src="./icon/atom.png" alt="" srcset=""><i>创建新型党组织</i></router-link></li>
+        <li><router-link class="box box-2" :to="{name:'innovative-party' , query: {id:12,title:'服务型党组织'}}"><img class="box-icon" src="./icon/server.png" alt="" srcset=""><i>服务型党组织</i></router-link></li>
+        <li><router-link class="box box-3" :to="{name:'innovative-party' , query: {id:13,title:'引领性党组织'}}"><img class="box-icon" src="./icon/pintu.png" alt="" srcset=""><i>引领性党组织</i></router-link></li>
+        <li><router-link class="box box-4" :to="{name:'innovative-party' , query: {id:14,title:'智慧型党组织'}}"><img class="box-icon" src="./icon/smart.png" alt="" srcset=""><i>智慧型党组织</i></router-link></li>
+        <li><router-link class="box box-5" :to="{name:'innovative-party' , query: {id:15,title:'学习型党组织'}}"><img class="box-icon" src="./icon/book.png" alt="" srcset=""><i>学习型党组织</i></router-link></li>
     </ul>
   <div class="bg"></div>
 </layout>

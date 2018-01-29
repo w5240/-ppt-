@@ -1,10 +1,10 @@
 <template>
   <layout>
     <div class="main">
-      <h1 class="h1">北医社区特色</h1>
+      <h1 class="h1">{{art.title}}</h1>
       <div class="art">
-        <img src="./img/tu.png" alt="">
-        <p>    北医社区地处花园路塔院，三院东侧，花园路商场对面，附近有331路、小12路、810公交线。北医社区占地面积：96300平方米，北医社区系北大医学部、北大第三医院、北大第六医院的宿舍区，社区居民绝大部分为北大医学部及其附属医院的职工和家属。社区资源与北大医学部资源共享，因此社区的通讯、医疗、餐饮、文体娱乐等服务设施齐备，社区环境干净、整洁，居民物质生活十分便利、业余文化生活丰富多彩。</p>
+        <!--<img src="./img/tu.png" alt="">-->
+        <p v-html="art.content"></p>
       </div>
     </div>
     <div class="bg"></div>
@@ -27,14 +27,16 @@
       };
     },
     mounted() {
-      this.gethtml()
+      this.gethtml();
     },
     methods:{
       gethtml(){
         axios
-//          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=${this.$route.params.id}`)
-          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=content&catid=1&id=1`)
+//          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=content&catid=${this.$route.params.id}&id=${this.$route.query.id}`)
+          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=content&catid=4&id=${this.$route.query.id}`)
+//          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=content&catid=1&id=1`)
           .then(res => {
+              console.log(res.data.data);
             this.art = res.data.data;
           });
       }
@@ -51,7 +53,7 @@
     left:0;
     height:100%;
     width:100%;
-    background-image: url('../../assets/images/bg-white.jpg');
+    background-image: url('./img/3.jpg');
     background-size: 100% 100%;
   }
   .main {
@@ -64,6 +66,9 @@
       margin: 0 0 39px 0;
     }
     .art {
+      font-size: v(18px);
+      height:v(490px);
+      overflow: auto;
       p {
         font-size: v(18px);
         line-height: v(36px);
