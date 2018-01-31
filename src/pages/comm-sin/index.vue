@@ -32,8 +32,8 @@
     methods:{
       gethtml(){
         axios
-//          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=content&catid=${this.$route.params.id}&id=${this.$route.query.id}`)
-          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=content&catid=4&id=${this.$route.query.id}`)
+          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=content&catid=${this.$route.params.id}&id=${this.$route.query.id}`)
+//          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=content&catid=4&id=${this.$route.query.id}`)
 //          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=content&catid=1&id=1`)
           .then(res => {
               console.log(res.data.data);

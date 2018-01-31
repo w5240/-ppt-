@@ -18,7 +18,16 @@ export default {
       title: "加载中..."
     };
     return {
-      art
+      art,
+//      mon:{
+//        jcqk:'基础情况',
+//        cxsfxm:'创新示范项目',
+//        tsjs:'特色简介',
+//        djsx:'党建时讯',
+//        xftd:'先锋团队',
+//        dzzbz:'党组织班子',
+//        wghgl:'网格化管理',
+//      },
     };
   },
   mounted() {
@@ -26,12 +35,21 @@ export default {
   },
   methods:{
       gethtml(){
-        axios
-          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=${this.$route.params.id}`)
-          .then(res => {
-              console.log(res);
-            this.art = res.data.data;
-          });
+        if (this.$route.query.content) {
+          this.art = {
+            title: this.$route.query.name,
+            content: this.$route.query.content,
+          }
+
+        } else {
+          axios
+            .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=${this.$route.params.id}`)
+            //          .get(`http://ekj.cqchunze.com/index.php?m=content&c=index&a=json&catid=${this.$route.params.id}&id=${this.$route.query.id}`)
+            .then(res => {
+              console.log(res.data.data);
+              this.art = res.data.data;
+            });
+        }
       }
   }
 };
@@ -54,6 +72,10 @@ export default {
     p {
       font-size: v(18px);
       line-height: v(36px);
+      span{
+        font-size: v(18px);
+
+      }
     }
     img {
       max-width: v(640px);

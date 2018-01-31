@@ -6,7 +6,7 @@
       <span :class="index===whichSel?'sel':''" v-for="(c,index) in char" :key="c" @click = 'choose(c,index)'>{{c}}</span>
     </div>
     <ul class="list">
-      <li v-for="e in list" @click="$router.push({name:'community'})">{{e.title}}</li>
+      <li v-for="e in list" @click="$router.push({name:'community',query:{id:e.id,catid:e.catid}})">{{e.title}}</li>
     </ul>
       <div class="box box-3-1">
         <h2>社区党组织</h2>

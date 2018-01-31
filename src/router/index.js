@@ -46,7 +46,7 @@ export default new Router({
     name: 'articleCenter',
     component: articleCenter
   },{
-    path: '/community',
+    path: '/community/:id',
     name: 'community',
     component: community
   },{

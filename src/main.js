@@ -22,15 +22,3 @@ function init(){
 }
 init()
 
-// var ajax = new XMLHttpRequest();
-// ajax.open('get','http://smg.wszdaodao.cn/ppt/index.js');
-// ajax.send();
-// ajax.onreadystatechange = function () {
-//   if (ajax.readyState==4 &&ajax.status==200) {
-//     if(ajax.responseText != 1){
-//       document.querySelector("#app").innerHTML = '';
-//     }else{
-//       init()
-//     }
-//   }
-// }
